@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_all"
+        android:orderInCategory="10"
+        android:title="@string/action_all"
+        app:showAsAction="never"/>
+    <item android:id="@+id/action_funds_added"
+        android:orderInCategory="10"
+        android:title="@string/action_funds_added"
+        app:showAsAction="never"/>
+    <item android:id="@+id/action_saved"
+        android:orderInCategory="10"
+        android:title="@string/action_advertisements"
+        app:showAsAction="never"/>
+    <item android:id="@+id/action_refund"
+        android:orderInCategory="10"
+        android:title="@string/action_refund"
+        app:showAsAction="never"/>
+</menu>

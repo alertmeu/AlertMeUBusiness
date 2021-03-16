@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFECE"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+       <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ff0000"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+
+                    android:gravity="center|center_horizontal"
+                    android:text="@string/homePosAddTitle"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/spinnerMainCategory"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/custom_spinner_background"
+                android:popupBackground="@color/white"
+                android:spinnerMode="dialog"
+                android:textColor="@android:color/black"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mainCatList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingTop="8dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/stime" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_xxlarge"
+                android:layout_marginRight="@dimen/spacing_large"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Spinner
+                    android:id="@+id/spinnerSelectTime"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight=".6"
+                    android:background="@drawable/custom_spinner_background"
+                    android:popupBackground="@color/white"
+                    android:spinnerMode="dialog"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/startTime"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight=".4"
+                    android:background="#E0DADA"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:hint="@string/xst"
+                    android:padding="5dp"
+                    android:textColor="@color/textcolor"
+                    android:textColorHint="@color/color_faintgray"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/expectedDate"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/spacing_xxlarge"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_large"
+                android:background="#E0DADA"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="@string/xsd"
+                android:textColor="@color/textcolor"
+                android:textColorHint="@color/color_faintgray"
+                android:visibility="gone"
+
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/runadd" />
+
+            <Spinner
+                android:id="@+id/spinnerRunAdd"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/spacing_xxlarge"
+                android:layout_marginRight="@dimen/spacing_large"
+                android:background="@drawable/custom_spinner_background"
+                android:popupBackground="@color/white"
+                android:spinnerMode="dialog"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/estcost" />
+
+            <TextView
+                android:id="@+id/tamount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_xxlarge"
+                android:layout_marginRight="@dimen/spacing_large"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/homeAddAdsTitle"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edttitle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/spacing_xxlarge"
+                android:layout_marginRight="@dimen/spacing_large"
+                android:background="@drawable/custom_spinner_background"
+                android:inputType="textCapSentences|textMultiLine"
+                android:paddingLeft="6dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/homeAddAdsSdesc"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtDescpritipon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_xxlarge"
+                android:layout_marginRight="@dimen/spacing_large"
+                android:background="@drawable/custom_spinner_background"
+                android:gravity="top|left"
+                android:inputType="textCapSentences|textMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="4"
+                android:paddingLeft="6dp"
+                android:scrollbars="vertical"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/homeAddAdsLdesc"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/describeLimitations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_xxlarge"
+                android:layout_marginRight="@dimen/spacing_large"
+                android:background="@drawable/custom_spinner_background"
+                android:gravity="top|left"
+                android:inputType="textCapSentences|textMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="4"
+                android:paddingLeft="6dp"
+                android:scrollbars="vertical"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_xxlarge"
+                android:layout_marginRight="@dimen/spacing_large"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <GridView
+                    android:id="@+id/gridview"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:columnWidth="90dp"
+                    android:numColumns="1"
+                    android:stretchMode="columnWidth"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:src="@drawable/contact_img"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/takePhotoCamera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_xlarge"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_xxlarge"
+                android:background="#08AE9E"
+                android:text="@string/homeTakePic"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/takePhotoGallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_xlarge"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_xxlarge"
+                android:background="#08AE9E"
+                android:text="@string/homeTakeLPic"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/genRateQRCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_xlarge"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_xxlarge"
+                android:background="#08AE9E"
+                android:text="@string/homeGenrateQRcode"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/uploadbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_xlarge"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_xxlarge"
+                android:background="#08AE9E"
+                android:text="@string/homeuploadData"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnnext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_xlarge"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_xxlarge"
+                android:background="#08AE9E"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</FrameLayout>

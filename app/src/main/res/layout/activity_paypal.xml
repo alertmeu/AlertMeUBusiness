@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".activity.PaypalActivity">
+
+<EditText
+    android:id="@+id/amount"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_marginTop="10dp"
+    android:background="@null"
+    android:gravity="center"
+    android:hint="Please enter amount "
+    android:inputType="numberDecimal"
+    android:textColorHint="#000000" />
+
+<Button
+    android:id="@+id/paypal_button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:onClick="beginPayment"
+    android:text="@string/paypal_button" />
+
+</LinearLayout>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="in.alertmeu.a4b">
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   <!-- <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />-->
+    <uses-permission android:name="android.permission.NETWORK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--<uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- for Samsung -->
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- for ZUK -->
+    <uses-permission android:name="android.permission.READ_APP_BADGE" />
+
+    <application
+        android:name=".utils.MyApplicatio"
+        android:allowBackup="false"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+        <activity android:name=".activity.AddSubPriceListActivity"></activity>
+        <activity android:name=".activity.AddModifyPriceListCategoryActivity" />
+        <activity
+            android:name=".activity.ShowAllSubCatActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.ShowAllReviewsActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.ShareAppBNUActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.ShowNotificationActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.LSelectActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.OTPforChangeMActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.CMActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.LMActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.ChangeMyPasswordActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity android:name=".activity.LSplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <service
+            android:name=".FirebaseNotification.MyFirebaseInstanceIDService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".FirebaseNotification.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".utils.FetchAddressIntentService"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.HomePageActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.RegisterNGetStartActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.OTPForRegisterActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.CreatePassActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.ReEnterPassctivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.AccountSetupActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.AccountSetupLocationActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".activity.BusinessMainCategoryActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.BusinessSubCategoryActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.BusinessProfileSettingActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.HelpCenterActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.LogoutActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.InstructionChangeNumberActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.FQAActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".ContactUsActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.ContactUsActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.TremsServiceActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.PostLoginActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.ScanBarActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.ScanActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".Fragments.TabsFragmentActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.PaypalActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.BusinessExpandableListViewActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.FullScreenViewActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.EditAccountSetupActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.EditAccountSetupLocationActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.AdsPreviewActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.AdvertisementPostedActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.ChangeMyNumberActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.OTPforChangeNumberActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.OTPForChangePasswordActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.CreateChangePassActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.ReEnterChangePassctivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.RegisterWithEmailActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.MyAccountActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.EditAdsPreviewActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.AdsRePostPreviewActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.AllHistroyAdsActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".activity.AllTransactionHistroyActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name=".transactions.TransactionsActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+        <activity
+            android:name="com.paytm.pgsdk.PaytmPGActivity"
+            android:configChanges="keyboard|orientation|locale|fontScale|screenLayout|screenSize|uiMode|navigation|touchscreen|keyboardHidden|layoutDirection|smallestScreenSize" />
+    </application>
+
+</manifest>

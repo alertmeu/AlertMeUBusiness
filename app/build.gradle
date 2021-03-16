@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "in.alertmeu.a4b"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 92
+        versionName "1.0.1"
+        useLibrary 'org.apache.http.legacy'
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries true
+        dexInProcess = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+
+                variant.outputs.all {
+                    outputFileName = "AlertMeUBusiness_P_app-${defaultConfig.versionName}v.apk"
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.1'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.google.firebase:firebase-auth:19.4.0'
+    implementation files('libs/httpcore-4.3.3.jar')
+    implementation files('libs/httpmime-4.3.6.jar')
+    implementation 'me.dm7.barcodescanner:zbar:1.8.4'
+    // implementation 'com.google.zxing:core:3.2.1'
+    implementation 'com.google.zxing:core:3.4.1'
+    implementation 'com.sun.mail:android-mail:1.6.5'
+    implementation 'com.sun.mail:android-activation:1.6.5'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'org.jsoup:jsoup:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    // implementation 'com.paypal.sdk:paypal-android-sdk:2.16.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation('com.paytm:pgplussdk:1.4.4') {
+        transitive = true;
+    }
+    implementation 'com.hbb20:ccp:2.2.3'
+    implementation 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+
+}

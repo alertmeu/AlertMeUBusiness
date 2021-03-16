@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AccountSetupActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff0000"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:paddingLeft="@dimen/spacing_medium"
+            android:text="@string/regReAS"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layoutHide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="2dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/regRenb" />
+
+            <EditText
+                android:id="@+id/edtNameOb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:inputType="textCapSentences|textMultiLine|textAutoCorrect"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="@string/regRebn" />
+
+            <EditText
+                android:id="@+id/edtMobileOb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:visibility="gone"
+                android:layout_marginRight="5dp"
+                android:inputType="text"
+
+                android:textColorHint="@drawable/selector"
+                android:singleLine="true" />
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_xxxlarge"
+                android:layout_marginRight="@dimen/spacing_xxxlarge"
+                android:background="@null"
+                android:visibility="gone"
+                app:ccp_autoDetectCountry="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="@string/regRebe" />
+
+            <EditText
+                android:id="@+id/edtEmailOb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:visibility="gone"
+                android:layout_marginRight="5dp"
+                android:inputType="textEmailAddress"
+                android:singleLine="true" />
+            <TextView
+                android:id="@+id/warning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/regRMWarning"
+                android:textColor="#ff0000"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/txtEmailOb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+               android:visibility="gone"
+                android:textSize="18sp"
+                android:textColor="@color/textcolor"
+                android:layout_marginRight="5dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/regReba" />
+
+            <EditText
+                android:id="@+id/edtAddressOb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:gravity="top|left"
+                android:inputType="textCapSentences|textMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:paddingLeft="6dp"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/regRebl" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_weight=".6">
+
+                    <ImageView
+                        android:id="@+id/showimage"
+                        android:layout_width="210dp"
+                        android:layout_height="200dp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/takeimage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:background="@drawable/ic_mode_edit_black_24dp" />
+
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnNext"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight=".4"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight=".7"
+                        android:gravity="right|center"
+                        android:text="@string/next"
+                        android:textAllCaps="false"
+                        android:textColor="#ff0000"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="@dimen/spacing_small"
+                        android:layout_weight=".3"
+                        android:src="@drawable/keyboard_arrow_right" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

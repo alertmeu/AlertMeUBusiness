@@ -1,0 +1,137 @@
+<androidx.fragment.app.FragmentTabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".9"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/head1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/naviBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight=".1"
+                    android:src="@drawable/navi_icon" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".8"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="@string/homePosActTitle"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/settings"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight=".1"
+                     />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@android:color/darker_gray" />
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@color/colorPrimary" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:orientation="horizontal"
+           >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/postAds"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/btnHomeC"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/btnHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/spacing_small"
+                        android:src="@drawable/home_icon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnBusinessListC"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/btnBusinessList"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/spacing_small"
+                        android:layout_weight="1"
+                        android:src="@drawable/businesslist_icon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnscanbarC"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/btnscanbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/spacing_small"
+                        android:layout_weight="1"
+                        android:src="@drawable/scanbar_icon" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.fragment.app.FragmentTabHost>
